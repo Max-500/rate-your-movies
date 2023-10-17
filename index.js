@@ -34,9 +34,13 @@ function modalShow(e) {
 }
 
 function calificar() {
-  calificacion.value > 0 && calificacion.value < 6
-    ? opx.push(parseInt(calificacion.value))
-    : console.error("Dato no valido");
+    if (calificacion.value > 0 && calificacion.value <= 5) {
+        opx.push(parseInt(calificacion.value));
+    } else {
+        console.error("Dato no válido");
+        return;
+    }
+    
   destroy();
   update();
   modal.style.display = "none";
